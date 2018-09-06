@@ -56,7 +56,7 @@ public class AlbumDetailAdapter extends RecyclerView.Adapter<AlbumDetailAdapter.
             holder.artistNameTextView.setText(album.getArtistName());
             holder.genreTextView.setText(album.getPrimaryGenreName());
             holder.yearTextView.setText(album.getReleaseDate().substring(0, 4));
-            holder.priceTextView.setText(String.format("US $ %s", String.valueOf(album.getCollectionPrice())));
+            holder.priceTextView.setText(String.format("$%s US", String.valueOf(album.getCollectionPrice())));
             holder.countryTextView.setText(album.getCountry());
             holder.copyrightTextView.setText(album.getCopyright());
         }

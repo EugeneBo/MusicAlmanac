@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/baseSearchFragmentConstrainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,18 +18,19 @@
 
     <TextView
         android:id="@+id/onStartupText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:drawablePadding="@dimen/material_keyline_quarter"
-        android:drawableTop="@drawable/ic_search_welcome_message"
-        android:text="Search to get started.."
-        android:textColor="@android:color/background_dark"
+        android:drawableRight="@drawable/ic_search_32dp"
+        android:text="@string/please_click_text"
         android:textSize="@dimen/text_xlarge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359" />
 
     <ProgressBar
         android:id="@+id/searchFragmentProgressBar"
@@ -40,5 +42,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/onStartupText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_seart_album_text"
+        android:textSize="@dimen/text_xlarge"
+        app:layout_constraintStart_toStartOf="@+id/onStartupText"
+        app:layout_constraintTop_toBottomOf="@+id/onStartupText" />
+
+    <TextView
+        android:id="@+id/onStartupText3"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/icon_text"
+        android:textSize="@dimen/text_xlarge"
+        app:layout_constraintEnd_toEndOf="@+id/onStartupText2"
+        app:layout_constraintStart_toEndOf="@+id/onStartupText"
+        app:layout_constraintTop_toTopOf="@+id/onStartupText" />
 
 </android.support.constraint.ConstraintLayout>

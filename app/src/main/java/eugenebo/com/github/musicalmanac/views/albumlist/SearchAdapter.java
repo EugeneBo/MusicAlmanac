@@ -45,7 +45,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.AlbumsList
         holder.trackNameTextView.setText(album.getCollectionName());
         holder.artistNameTextView.setText(album.getArtistName());
         holder.genreTextView.setText(album.getPrimaryGenreName());
-        holder.priceTextView.setText(String.format("US $ %s", String.valueOf(album.getCollectionPrice())));
+        holder.priceTextView.setText(String.format("$%s US", String.valueOf(album.getCollectionPrice())));
     }
 
     @Override

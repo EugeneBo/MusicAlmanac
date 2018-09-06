@@ -2,4 +2,7 @@
     <string name="app_name">Music Almanac</string>
     <string name="artwork">artwork</string>
     <string name="search">Search</string>
+    <string name="icon_text">icon</string>
+    <string name="start_seart_album_text">to start search albums!</string>
+    <string name="please_click_text">Please, click</string>
 </resources>

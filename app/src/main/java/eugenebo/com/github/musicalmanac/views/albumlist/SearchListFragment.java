@@ -20,8 +20,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import eugenebo.com.github.musicalmanac.R;
 import eugenebo.com.github.musicalmanac.model.Album;
 import eugenebo.com.github.musicalmanac.views.Contract;
@@ -32,6 +34,8 @@ public class SearchListFragment extends Fragment implements Contract.View {
 
     private ConstraintLayout baseViewGroup;
     private TextView onStartupText;
+    private TextView onStartupText2;
+    private TextView onStartupText3;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private List<Album> albums = new ArrayList<>();
@@ -48,7 +52,6 @@ public class SearchListFragment extends Fragment implements Contract.View {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        //   setRetainInstance(true);
     }
 
     @Nullable
@@ -61,6 +64,8 @@ public class SearchListFragment extends Fragment implements Contract.View {
 
         baseViewGroup = view.findViewById(R.id.baseSearchFragmentConstrainLayout);
         onStartupText = view.findViewById(R.id.onStartupText);
+        onStartupText2 = view.findViewById(R.id.onStartupText2);
+        onStartupText3 = view.findViewById(R.id.onStartupText3);
         progressBar = view.findViewById(R.id.searchFragmentProgressBar);
         recyclerView = view.findViewById(R.id.listSongs);
         adapter = new SearchAdapter(getActivity(), albums);
@@ -110,6 +115,8 @@ public class SearchListFragment extends Fragment implements Contract.View {
 
     public void search(final String strTerm) {
         onStartupText.setVisibility(View.GONE);
+        onStartupText2.setVisibility(View.GONE);
+        onStartupText3.setVisibility(View.GONE);
         recyclerView.setVisibility(View.VISIBLE);
 
         albums.clear();
