@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/artworkDetailAlbumImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Album artwork"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/copyrightDetailAlbumTextView"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/albumDetailAlbumNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/artworkDetailAlbumImageView"
+        app:layout_constraintTop_toTopOf="@+id/artworkDetailAlbumImageView"
+        tools:text="Nevermind" />
+
+    <TextView
+        android:id="@+id/artistDetailAlbumNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/albumDetailAlbumNameTextView"
+        tools:text="Nirvana" />
+
+    <TextView
+        android:id="@+id/genreDetailAlbumTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/artistDetailAlbumNameTextView"
+        tools:text="Alternative" />
+
+    <TextView
+        android:id="@+id/yearDetailAlbumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/genreDetailAlbumTextView"
+        tools:text="1991" />
+
+    <TextView
+        android:id="@+id/countryDetailAlbumTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/yearDetailAlbumTextView"
+        tools:text="USA" />
+
+    <TextView
+        android:id="@+id/priceDetailAlbumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textDividerDetailAlbum"
+        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView"
+        tools:text="US $ 9.99" />
+
+    <TextView
+        android:id="@+id/copyrightDetailAlbumTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/countryDetailAlbumTextView"
+        tools:text="℗ 2011 Geffen Records" />
+
+    <TextView
+        android:id="@+id/songsDetailAlbumHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Playlist :"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/copyrightDetailAlbumTextView" />
+
+    <View
+        android:id="@+id/dividerDetailAlbum"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textDividerDetailAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" : "
+        app:layout_constraintStart_toEndOf="@+id/yearDetailAlbumTextView"
+        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView" />
+
+
+</android.support.constraint.ConstraintLayout>
