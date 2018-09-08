@@ -15,12 +15,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import eugenebo.com.github.musicalmanac.R;
 import eugenebo.com.github.musicalmanac.model.Album;
 import eugenebo.com.github.musicalmanac.model.Song;
 import eugenebo.com.github.musicalmanac.views.Contract;
+import eugenebo.com.github.musicalmanac.views.albumlist.SearchListAdapter;
 
 public class AlbumDetailFragment extends Fragment implements Contract.View {
 
@@ -40,6 +43,7 @@ public class AlbumDetailFragment extends Fragment implements Contract.View {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        setRetainInstance(true);
     }
 
     @Nullable
@@ -49,7 +53,10 @@ public class AlbumDetailFragment extends Fragment implements Contract.View {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_details, container, false);
-        album = (Album) getArguments().getSerializable("track");
+
+        if (getArguments() != null) {
+            album = (Album) getArguments().getSerializable(SearchListAdapter.ALBUM_TAG);
+        }
 
         if (getArguments() != null) {
             if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
@@ -69,7 +76,9 @@ public class AlbumDetailFragment extends Fragment implements Contract.View {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        load(album.getCollectionId());
+        if (savedInstanceState == null) {
+            loadDetailedAlbumInfo(album.getCollectionId());
+        }
 
         return view;
     }
@@ -81,20 +90,18 @@ public class AlbumDetailFragment extends Fragment implements Contract.View {
             case android.R.id.home:
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.popBackStack();
-
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    public void load(final Integer id) {
-
+    public void loadDetailedAlbumInfo(final Integer id) {
         recyclerView.setVisibility(View.VISIBLE);
-
         items.clear();
         adapter.notifyDataSetChanged();
-        setLoadingIndicator(true);
+        showProgressBar(true);
         recyclerView.post(new Runnable() {
             @Override
             public void run() {
@@ -115,21 +122,20 @@ public class AlbumDetailFragment extends Fragment implements Contract.View {
         this.items.clear();
         this.items.add(album);
 
-        //removing 0 element that contain reference info about album
-        //which we don't need in adapter
+        //Removing 0 element that contain reference info about album provided by iTunes API
+        //which we don't need in adapter.
+        //All album info we take from fragment args.
         songs.remove(0);
 
         this.items.addAll(songs);
-        setLoadingIndicator(false);
+        showProgressBar(false);
         adapter.notifyDataSetChanged();
     }
 
 
     @Override
-    public void setLoadingIndicator(boolean isLoading) {
+    public void showProgressBar(boolean isLoading) {
         if (isLoading) progressBar.setVisibility(View.VISIBLE);
         else progressBar.setVisibility(View.GONE);
     }
-
-
 }

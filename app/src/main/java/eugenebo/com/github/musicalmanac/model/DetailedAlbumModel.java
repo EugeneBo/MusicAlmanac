@@ -18,16 +18,8 @@ public class DetailedAlbumModel{
         return resultCount;
     }
 
-    public void setResultCount(Integer resultCount) {
-        this.resultCount = resultCount;
-    }
-
     public List<Song> getSongs() {
         return songs;
-    }
-
-    public void setSongs(List<Song> songs) {
-        this.songs = songs;
     }
 
 }

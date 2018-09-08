@@ -114,10 +114,10 @@ public class AlbumDetailAdapter extends RecyclerView.Adapter<AlbumDetailAdapter.
             if (viewType == ALBUM_INFO) {
                 artworkImageView = view.findViewById(R.id.artworkDetailAlbumImageView);
                 albumNameTextView = view.findViewById(R.id.albumDetailAlbumNameTextView);
-                artistNameTextView = view.findViewById(R.id.artistDetailAlbumNameTextView);
+                artistNameTextView = view.findViewById(R.id.artistNameItemAlbumTextView);
                 genreTextView = view.findViewById(R.id.genreDetailAlbumTextView);
                 yearTextView = view.findViewById(R.id.yearDetailAlbumTextView);
-                priceTextView = view.findViewById(R.id.priceDetailAlbumTextView);
+                priceTextView = view.findViewById(R.id.priceItemAlbumTextView);
                 countryTextView = view.findViewById(R.id.countryDetailAlbumTextView);
                 copyrightTextView = view.findViewById(R.id.copyrightDetailAlbumTextView);
             }

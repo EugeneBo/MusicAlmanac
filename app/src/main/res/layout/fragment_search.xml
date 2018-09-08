@@ -4,64 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/baseSearchFragmentConstrainLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintForText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/onStartupText2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/start_search_album_text"
+            android:textSize="@dimen/text_xlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/onStartupText3"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/icon_text"
+                android:textSize="@dimen/text_xlarge"
+                app:layout_constraintStart_toEndOf="@+id/onStartupText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/onStartupText"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:drawableRight="@drawable/ic_search_32dp"
+                android:text="@string/please_click_text"
+                android:textSize="@dimen/text_xlarge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listSongs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/onStartupText"
-        android:layout_width="160dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:drawablePadding="@dimen/material_keyline_quarter"
-        android:drawableRight="@drawable/ic_search_32dp"
-        android:text="@string/please_click_text"
-        android:textSize="@dimen/text_xlarge"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.376"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
 
     <ProgressBar
         android:id="@+id/searchFragmentProgressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/onStartupText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_seart_album_text"
-        android:textSize="@dimen/text_xlarge"
-        app:layout_constraintStart_toStartOf="@+id/onStartupText"
-        app:layout_constraintTop_toBottomOf="@+id/onStartupText" />
-
-    <TextView
-        android:id="@+id/onStartupText3"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
-        android:text="@string/icon_text"
-        android:textSize="@dimen/text_xlarge"
-        app:layout_constraintEnd_toEndOf="@+id/onStartupText2"
-        app:layout_constraintStart_toEndOf="@+id/onStartupText"
-        app:layout_constraintTop_toTopOf="@+id/onStartupText" />
 
 </android.support.constraint.ConstraintLayout>

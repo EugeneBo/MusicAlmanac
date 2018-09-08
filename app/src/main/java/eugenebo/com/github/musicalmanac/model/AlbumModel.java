@@ -20,10 +20,6 @@ public class AlbumModel {
         return resultCount;
     }
 
-    public void setResultCount(Integer resultCount) {
-        this.resultCount = resultCount;
-    }
-
     public List<Album> getAlbums() {
 
         //sorting collection by album name (collection name)
@@ -34,10 +30,6 @@ public class AlbumModel {
             }
         });
         return albums;
-    }
-
-    public void setAlbums(List<Album> results) {
-        this.albums = results;
     }
 
 }

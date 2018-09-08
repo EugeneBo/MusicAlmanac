@@ -7,17 +7,16 @@
 
     <ImageView
         android:id="@+id/artworkDetailAlbumImageView"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="Album artwork"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/albumArtworkContentDescription"
         android:scaleType="center"
-        app:layout_constraintBottom_toBottomOf="@+id/copyrightDetailAlbumTextView"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/albumDetailAlbumNameTextView" />
 
     <TextView
         android:id="@+id/albumDetailAlbumNameTextView"
@@ -27,19 +26,24 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/artworkDetailAlbumImageView"
-        app:layout_constraintTop_toTopOf="@+id/artworkDetailAlbumImageView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Nevermind" />
 
     <TextView
-        android:id="@+id/artistDetailAlbumNameTextView"
+        android:id="@+id/artistNameItemAlbumTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
@@ -52,9 +56,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/artistDetailAlbumNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/artistNameItemAlbumTextView"
         tools:text="Alternative" />
 
     <TextView
@@ -66,23 +72,38 @@
         tools:text="1991" />
 
     <TextView
+        android:id="@+id/textDividerDetailAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/textDivider"
+        app:layout_constraintStart_toEndOf="@+id/yearDetailAlbumTextView"
+        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView" />
+
+    <TextView
+        android:id="@+id/priceItemAlbumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/textDividerDetailAlbum"
+        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView"
+        tools:text="US $ 9.99" />
+
+    <TextView
         android:id="@+id/countryDetailAlbumTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/yearDetailAlbumTextView"
         tools:text="USA" />
 
-    <TextView
-        android:id="@+id/priceDetailAlbumTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/textDividerDetailAlbum"
-        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView"
-        tools:text="US $ 9.99" />
 
     <TextView
         android:id="@+id/copyrightDetailAlbumTextView"
@@ -90,6 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/albumDetailAlbumNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/countryDetailAlbumTextView"
@@ -101,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
-        android:text="Playlist :"
+        android:text="@string/playlist"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,14 +139,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textDividerDetailAlbum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" : "
-        app:layout_constraintStart_toEndOf="@+id/yearDetailAlbumTextView"
-        app:layout_constraintTop_toTopOf="@+id/yearDetailAlbumTextView" />
-
 
 </android.support.constraint.ConstraintLayout>

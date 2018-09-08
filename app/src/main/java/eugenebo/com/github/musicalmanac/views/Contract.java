@@ -7,7 +7,7 @@ public interface Contract {
     interface View {
         void displayMessage(String message);
 
-        void setLoadingIndicator(boolean isLoading);
+        void showProgressBar(boolean isLoading);
 
         <T> void displayData(List<T> data);
     }

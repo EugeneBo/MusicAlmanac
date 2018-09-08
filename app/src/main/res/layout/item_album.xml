@@ -2,54 +2,20 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/song_item_row"
+    android:id="@+id/baseConstraintItemAlbum"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="80dp"
+    android:background="?attr/selectableItemBackground"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/trackNameTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/albumArtworkTextView"
-        app:layout_constraintTop_toTopOf="@+id/albumArtworkTextView"
-        tools:text="Nevermind" />
-
-    <TextView
-        android:id="@+id/artistDetailAlbumNameTextView"
-        style="@style/TextAppearance.AppCompat.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toStartOf="@+id/trackNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/trackNameTextView"
-        tools:text="Nirvana" />
-
-    <TextView
-        android:id="@+id/priceDetailAlbumTextView"
-        style="@style/TextAppearance.AppCompat.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/trackNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/artistDetailAlbumNameTextView"
-        tools:text="US $0.99" />
 
     <ImageView
         android:id="@+id/albumArtworkTextView"
-        android:layout_width="@dimen/material_keyline_huge"
-        android:layout_height="@dimen/material_keyline_huge"
+        android:layout_width="@dimen/album_artwork_small"
+        android:layout_height="64dp"
         android:layout_centerVertical="true"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/artwork"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,23 +23,61 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textDivider"
-        android:layout_width="wrap_content"
+        android:id="@+id/albumNameAlbumItemTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text=" : "
-        app:layout_constraintStart_toEndOf="@+id/artistDetailAlbumNameTextView"
-        app:layout_constraintTop_toTopOf="@+id/artistDetailAlbumNameTextView" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/albumArtworkTextView"
+        app:layout_constraintTop_toTopOf="@+id/albumArtworkTextView"
+        tools:text="Nevermind" />
 
     <TextView
-        android:id="@+id/genreTextView"
+        android:id="@+id/artistNameItemAlbumTextView"
+        style="@style/TextAppearance.AppCompat.Small"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textDivider"
-        app:layout_constraintTop_toTopOf="@+id/artistDetailAlbumNameTextView"
+        app:layout_constraintStart_toStartOf="@+id/albumNameAlbumItemTextView"
+        app:layout_constraintTop_toBottomOf="@+id/albumNameAlbumItemTextView"
+        tools:text="Nirvana" />
+
+    <TextView
+        android:id="@+id/genreItemAlbumTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/albumNameAlbumItemTextView"
+        app:layout_constraintTop_toBottomOf="@+id/artistNameItemAlbumTextView"
         tools:text="Alternative" />
 
+    <TextView
+        android:id="@+id/priceItemAlbumTextView"
+        style="@style/TextAppearance.AppCompat.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/albumNameAlbumItemTextView"
+        app:layout_constraintTop_toBottomOf="@+id/genreItemAlbumTextView"
+        tools:text="US $0.99" />
 
 </android.support.constraint.ConstraintLayout>

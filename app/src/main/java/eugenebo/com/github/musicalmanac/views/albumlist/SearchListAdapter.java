@@ -22,12 +22,12 @@ import eugenebo.com.github.musicalmanac.R;
 import eugenebo.com.github.musicalmanac.model.Album;
 import eugenebo.com.github.musicalmanac.views.albumdetail.AlbumDetailFragment;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.AlbumsListViewHolder> {
-
+public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.AlbumsListViewHolder> {
+    public static final String ALBUM_TAG = "eugenebo.com.github.musicalmanac.views.albumdetail albumArgument";
     private Context context;
     private List<Album> albums;
 
-    SearchAdapter(Context context, List<Album> albums) {
+    SearchListAdapter(Context context, List<Album> albums) {
         this.context = context;
         this.albums = albums;
     }
@@ -42,7 +42,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.AlbumsList
                 .apply(new RequestOptions().placeholder(R.drawable.ic_launcher))
                 .into(holder.albumArtworkImageVIew);
 
-        holder.trackNameTextView.setText(album.getCollectionName());
+        holder.albumNameTextView.setText(album.getCollectionName());
         holder.artistNameTextView.setText(album.getArtistName());
         holder.genreTextView.setText(album.getPrimaryGenreName());
         holder.priceTextView.setText(String.format("$%s US", String.valueOf(album.getCollectionPrice())));
@@ -52,7 +52,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.AlbumsList
     public int getItemCount() {
         return albums.size();
     }
-
 
     @NonNull
     @Override
@@ -64,34 +63,34 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.AlbumsList
     class AlbumsListViewHolder extends RecyclerView.ViewHolder {
         private ConstraintLayout baseViewHolder;
         private ImageView albumArtworkImageVIew;
-        private TextView trackNameTextView;
+        private TextView albumNameTextView;
         private TextView artistNameTextView;
         private TextView genreTextView;
         private TextView priceTextView;
 
         AlbumsListViewHolder(View view) {
             super(view);
-            baseViewHolder = view.findViewById(R.id.song_item_row);
+            baseViewHolder = view.findViewById(R.id.baseConstraintItemAlbum);
             albumArtworkImageVIew = view.findViewById(R.id.albumArtworkTextView);
-            trackNameTextView = view.findViewById(R.id.trackNameTextView);
-            artistNameTextView = view.findViewById(R.id.artistDetailAlbumNameTextView);
-            genreTextView = view.findViewById(R.id.genreTextView);
-            priceTextView = view.findViewById(R.id.priceDetailAlbumTextView);
+            albumNameTextView = view.findViewById(R.id.albumNameAlbumItemTextView);
+            artistNameTextView = view.findViewById(R.id.artistNameItemAlbumTextView);
+            genreTextView = view.findViewById(R.id.genreItemAlbumTextView);
+            priceTextView = view.findViewById(R.id.priceItemAlbumTextView);
 
             baseViewHolder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("track", albums.get(getAdapterPosition()));
+                    bundle.putSerializable(ALBUM_TAG, albums.get(getAdapterPosition()));
                     Fragment fragment = new AlbumDetailFragment();
                     fragment.setArguments(bundle);
 
                     ((FragmentActivity) context)
                             .getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragmentContainer, fragment)
-                            .addToBackStack(null)
+                            .replace(R.id.fragmentContainer, fragment, "DetailedFragment")
+                            .addToBackStack("DetailedFragment")
                             .commit();
                 }
             });

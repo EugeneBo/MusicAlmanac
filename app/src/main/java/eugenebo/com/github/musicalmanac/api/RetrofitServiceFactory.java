@@ -3,9 +3,9 @@ package eugenebo.com.github.musicalmanac.api;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SearchServiceFactory {
+public class RetrofitServiceFactory {
 
-    public static AlbumsSearchService getInstance() {
+    public static Service getServiceInstance() {
 
         String baseUrl = "https://itunes.apple.com/";
 
@@ -14,6 +14,6 @@ public class SearchServiceFactory {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(AlbumsSearchService.class);
+        return retrofit.create(Service.class);
     }
 }

@@ -3,6 +3,9 @@
     <string name="artwork">artwork</string>
     <string name="search">Search</string>
     <string name="icon_text">icon</string>
-    <string name="start_seart_album_text">to start search albums!</string>
+    <string name="start_search_album_text">to start searching for albums!</string>
     <string name="please_click_text">Please, click</string>
+    <string name="playlist">Playlist</string>
+    <string name="albumArtworkContentDescription">Album artwork</string>
+    <string name="textDivider">:</string>
 </resources>
